@@ -13,12 +13,21 @@
 
         <h2>Customize Dog Images Here!</h2>
     </div>
+    <div id = "imageUrl">
+        <label class = "labels">Use Image URL: </label><input id = "url" type = "text" placeholder="Copy Image Address Into Here...">
+        <!-- Quick example of using onclick in html -->
+        <input onclick = "showImage()" type="submit">
+        <br>
+        <label> OR </label>
+        <br>
+        <label class="labels">Select Image: </label><input type="file" id = "fileInput" accept="image/*">
+    </div>
     <div id="imageAndcontrols">
 
         <div id = "customizeButtons">
             <!-- Here go the customizable buttons that change the outlay of the picture -->
             <div>
-                <label>Pick a border color!: </label><input id = "color" type="color">
+                <label class="labels">Pick a border color!: </label><input id = "color" type="color">
                 
             </div>
             <div>
@@ -27,16 +36,16 @@
             </div>
             <div>
                 
-                <label>Border Size: </label><input id = "borderSize" class = "rangeInp" type="range" min="5" max="40" value = "5"><label id = "borderThick">  5</label><label> px</label>
+                <label class="labels">Border Size: </label><input id = "borderSize" class = "rangeInp" type="range" min="5" max="40" value = "5"><label id = "borderThick">  5</label><label> px</label>
             </div>
             <div>
                 
-                <label>Radius Size: </label><input id = "radiusSize" class = "rangeInp" type = "range" min="0" max="80" value = "0"><label id = "radiusRound"> 0</label><label> px</label>
+                <label class="labels">Radius Size: </label><input id = "radiusSize" class = "rangeInp" type = "range" min="0" max="80" value = "0"><label id = "radiusRound"> 0</label><label> px</label>
             </div>
         </div>
         <!-- <div id = "halfImage"> -->
             <div id="imgContainer">
-                
+
             </div>
 
         <!-- </div> -->

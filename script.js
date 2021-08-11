@@ -10,6 +10,8 @@ let borderSizeControl = document.querySelector("#borderSize")
 let radiusSizeControl = document.querySelector("#radiusSize");
 let radiusLabel = document.querySelector("#radiusRound");
 let borderLabel = document.querySelector("#borderThick");
+let imageURL = document.querySelector("#url");
+let fileInput = document.querySelector("#fileInput");
 
 //border boolean
 let borderPresent = false;
@@ -49,7 +51,7 @@ let borderPresent = false;
                     //     })
                     
                     // hardcode it here for testing purposes
-dogUrl = "https://images.dog.ceo/breeds/affenpinscher/n02110627_7680.jpg"
+dogUrl = "https://dogtime.com/assets/uploads/2011/03/puppy-development.jpg"
 
 let newDiv = document.createElement("div");
 let newImg = document.createElement("img");
@@ -104,7 +106,30 @@ radiusSizeControl.onchange = function(event) {
     let size = radiusSizeControl.value;
     // display the value
     radiusLabel.innerHTML = size;
-    if (borderPresent) {
+    // if (borderPresent) {
         Image.style.borderRadius = size + "px";
-    }
+    // }
 }
+// use image url to fetch an image
+function showImage() {
+    let url = imageURL.value;
+    // ref our image
+    let Image = document.querySelector("img");
+    Image.src = url;
+    
+    // clear image input
+    imageURL.value = "";
+}
+fileInput.onchange = function(event) {
+    event.preventDefault();
+    // use file as image
+    let file = fileInput.value;
+    let Image = document.querySelector("img");
+
+    // cred to the below code inspired and researched from stack overflow
+    Image.src = URL.createObjectURL(event.target.files[0]);
+    Image.onload = function() {
+      URL.revokeObjectURL(Image.src) // free memory
+    }
+  };
+
