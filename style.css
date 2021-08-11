@@ -18,13 +18,20 @@ img {
 #customizeButtons {
     display: flex;
     flex-direction: column;
-    /* border: red solid 2px; */
     width: 30%;
     height: 100%;
-    /* border-right: grey 2px solid; */
 }
-button {
+.buttons {
+    background-color: transparent;
+    border: green solid 2px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 20px;
     width: 30%;
+    height: 60%;
+}
+.buttons:hover {
+    background-color: green;
+    color: white;
 }
 .rangeInp {
     width: 25%;
@@ -42,10 +49,23 @@ button {
     /* border: red 3px solid; */
     text-align: center;
     margin: 10px;
+    display: flex;
+    justify-content: center;
+    border-bottom: grey 2px solid;
 }
 #url {
     width: 20%;
     margin-bottom: 15px;
+}
+#fileSubmit {
+    margin: 5px;
+    width: 40%;
+    padding-left: -20%;
+}
+#urlSubmit {
+    width: 40%;
+    margin: 5px;
+    border-right: grey 2px solid;
 }
 .labels {
     font-family: Verdana, Geneva, Tahoma, sans-serif;

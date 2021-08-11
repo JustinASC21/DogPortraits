@@ -112,10 +112,12 @@ radiusSizeControl.onchange = function(event) {
 }
 // use image url to fetch an image
 function showImage() {
+    // shows the image fetched from the image url
     let url = imageURL.value;
     // ref our image
     let Image = document.querySelector("img");
     Image.src = url;
+    Image.alt = "Invalid Image URL";
     
     // clear image input
     imageURL.value = "";
@@ -131,5 +133,6 @@ fileInput.onchange = function(event) {
     Image.onload = function() {
       URL.revokeObjectURL(Image.src) // free memory
     }
+    Image.alt = "Invalid Image";
   };
 

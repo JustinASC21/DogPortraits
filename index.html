@@ -14,13 +14,15 @@
         <h2>Customize Dog Images Here!</h2>
     </div>
     <div id = "imageUrl">
-        <label class = "labels">Use Image URL: </label><input id = "url" type = "text" placeholder="Copy Image Address Into Here...">
-        <!-- Quick example of using onclick in html -->
-        <input onclick = "showImage()" type="submit">
-        <br>
-        <label> OR </label>
-        <br>
-        <label class="labels">Select Image: </label><input type="file" id = "fileInput" accept="image/*">
+        <div id = "urlSubmit">
+            <label class = "labels">Use Image URL: </label><input id = "url" type = "text" placeholder="Image URL">
+            <!-- Quick example of using onclick in html -->
+            <input id = "submitButton" class = "buttons" onclick = "showImage()" type="submit">
+        </div>
+        <div id="fileSubmit">
+            <label class="labels">Select Image: </label><input type="file" id = "fileInput" accept="image/*">
+        </div>
+    
     </div>
     <div id="imageAndcontrols">
 
@@ -32,7 +34,7 @@
             </div>
             <div>
                 
-                <button id = "border">Border</button>
+                <button class = "buttons" id = "border">Border</button>
             </div>
             <div>
                 
