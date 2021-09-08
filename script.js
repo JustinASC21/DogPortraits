@@ -12,6 +12,8 @@ let radiusLabel = document.querySelector("#radiusRound");
 let borderLabel = document.querySelector("#borderThick");
 let imageURL = document.querySelector("#url");
 let fileInput = document.querySelector("#fileInput");
+let transparentInput = document.getElementById("transparency");
+let tranparentLabel = document.getElementById("tranparentLabel");
 
 //border boolean
 let borderPresent = false;
@@ -135,4 +137,15 @@ fileInput.onchange = function(event) {
     }
     Image.alt = "Invalid Image";
   };
+transparentInput.onchange = function(event) {
+    event.preventDefault();
 
+    // when value is changed here
+    let transparentInputValue = document.getElementById("transparency").value
+    let displayTransparentLabel = document.querySelector("#transparentLabel");
+    
+    let image = document.querySelector("img");
+    image.style.opacity = -transparentInputValue;
+
+    displayTransparentLabel.innerHTML = (100 - Math.floor(transparentInputValue * -100)) + " %";
+}
